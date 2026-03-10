@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'MovieMind | Intelligent Recommendations',
+  title: 'MovieBrain | Intelligent Recommendations',
   description: 'AI powered movie recommendations',
 };
 
