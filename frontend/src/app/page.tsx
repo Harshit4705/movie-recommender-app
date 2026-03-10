@@ -115,11 +115,14 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 glass-panel border-x-0 border-t-0 rounded-none bg-black/40 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => { setBundle(null); setQuery(""); }}>
-            <div className="bg-gradient-to-tr from-violet-600 to-indigo-500 p-2 rounded-xl shadow-lg shadow-violet-500/30 animate-float">
-              <Film size={20} className="text-white" />
+          <div className="flex items-center gap-2 cursor-pointer group" onClick={() => { setBundle(null); setQuery(""); }}>
+            <div className="relative bg-gradient-to-tr from-violet-600 to-indigo-500 p-2 rounded-xl shadow-[0_0_15px_rgba(139,92,246,0.5)] overflow-hidden">
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              <Film size={20} className="text-white relative z-10 group-hover:rotate-180 transition-transform duration-700 ease-in-out" />
             </div>
-            <h1 className="text-xl font-bold tracking-tight">Movie<span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 animate-gradient-text">Brain</span></h1>
+            <h1 className="text-xl font-bold tracking-tight relative overflow-hidden">
+              Movie<span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 animate-gradient-text inline-block">Brain</span>
+            </h1>
           </div>
           <div className="hidden sm:flex items-center gap-6 text-sm font-medium text-white/70">
             <span className="hover:text-white transition-colors cursor-pointer">Recommender Model</span>
@@ -130,16 +133,9 @@ export default function Home() {
 
       {/* Hero Search Section */}
       <section className="pt-32 pb-16 px-6 relative max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[50vh]">
-        {/* Floating background aesthetic elements */}
-        <div className="absolute top-20 left-10 text-violet-500/20 animate-float">
-          <Popcorn size={64} />
-        </div>
-        <div className="absolute bottom-20 right-10 text-indigo-500/20 animate-float-delayed">
-          <Film size={80} />
-        </div>
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-violet-300 mb-6 backdrop-blur-md crazy-pulse-border">
-          <Sparkles size={14} className="animate-pulse" /> Powered by ML & TF-IDF
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-violet-300 mb-6 backdrop-blur-md crazy-pulse-border cursor-default hover:bg-white/10 transition-colors">
+          <Sparkles size={14} className="animate-[spin_4s_linear_infinite]" /> Powered by ML & TF-IDF
         </div>
         
         <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight hover:scale-105 transition-transform duration-500 cursor-default">
@@ -154,11 +150,11 @@ export default function Home() {
         </p>
 
         {/* Search Bar Container */}
-        <div className="relative w-full max-w-2xl z-40 animate-float-delayed">
+        <div className="relative w-full max-w-2xl z-40 transition-transform duration-500">
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-indigo-600 rounded-2xl blur-lg opacity-40 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" />
-            <div className="relative flex items-center bg-[#09090b]/80 border border-white/10 backdrop-blur-xl rounded-2xl p-2 shadow-2xl transition-all duration-300 group-hover:border-fuchsia-500/50 group-hover:scale-105">
-              <Search className="text-white/40 ml-4 mr-3" size={24} />
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-indigo-600 rounded-2xl blur-lg opacity-40 group-hover:opacity-70 group-focus-within:opacity-100 transition-opacity duration-700 animate-pulse" />
+            <div className="relative flex items-center bg-[#09090b]/80 border border-white/10 backdrop-blur-xl rounded-2xl p-2 shadow-2xl transition-all duration-300 group-hover:border-fuchsia-500/50 focus-within:ring-2 focus-within:ring-violet-500/50">
+              <Search className="text-white/40 ml-4 mr-3 group-focus-within:text-violet-400 group-focus-within:scale-110 transition-all duration-300" size={24} />
               <input 
                 type="text"
                 placeholder="Search for a movie title..."
