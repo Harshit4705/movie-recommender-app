@@ -1,0 +1,21 @@
+# Environments
+venv/
+.venv/
+env/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large files - NOTE: WE NEED SOME FOR RENDER DEPLOYMENT
+# *.pkl
+# *.csv
+
+# Ignore the huge source CSV but KEEP the derived pickles needed for the FastAPI server to run on Render
+movies_metadata.csv
+
+# OS generated files
+.DS_Store
+Thumbs.db
